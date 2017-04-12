@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="author" content="qll">
+    <link rel="shortcut icon" type="image/x-icon" href="img/common/favicon.ico">
+    <meta name="keywords" content="中科恒健集团">
+    <meta name="description" content="中科恒健集团">
+    <title>健康城-恒健康体-旗下产业-中科恒健集团</title>
+    <style type="text/css">
+        * {margin: 0; padding: 0;}
+        ::-webkit-scrollbar{width: 0}
+        .magnify {width: 100%; margin: 50px auto; position: relative;cursor: pointer}
+        /*Lets create the magnifying glass*/
+        .large {
+            width: 200px; height: 200px;
+            position: absolute;
+            border-radius: 50%;
+
+            /*Multiple box shadows to achieve the glass effect*/
+            box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85),
+            0 0 7px 7px rgba(0, 0, 0, 0.25),
+            inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+
+            /*Lets load up the large image first*/
+            background: url('img/business/恒健健康城_2.jpg') no-repeat;
+
+            /*hide the glass by default*/
+            display: none;
+        }
+        /*To solve overlap bug at the edges during magnification*/
+        .small { display: block; }
+    </style>
+    <link rel="stylesheet" href="css/common.css"/>
+    <script src="js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+<header class="project">
+    <div class="box">
+        <div class="con-width">
+            <div class="top text-r clearfix">
+                <img src="img/index/ico-lang.png"/>
+                <div class="searchBox clearfix">
+                    <form action="#">
+                        <input type="text"/>
+                        <input type="submit" class="btnSearch" value=""/>
+                    </form>
+                </div>
+                <a href="javascript:void(0)">
+                    <img src="img/index/ico-user.png"/>
+                </a>
+            </div>
+            <nav class="clearfix">
+                <div class="f-l">
+                    <a href="index.html"><img src="img/common/zklogo_2.png" width="235" height="48" title="首页"/></a>
+                </div>
+                <div class="f-r">
+                    <ul class="clearfix">
+                        <li class="fli">
+                            <a href="about-us.html">
+                                <h1>集团概况</h1>
+                                <span>About Us</span>
+                            </a>
+                            <div class="con_li con_li_1">
+                                <ul>
+                                    <li><a href="about-us.html">集团介绍</a></li>
+                                    <li><a href="organization-structure.html">组织架构</a></li>
+                                    <li><a href="licheng.html">发展历程</a></li>
+                                    <li><a href="honour.html">荣誉资质</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="fli active">
+                            <a href="business.html">
+                                <h1>旗下产业</h1>
+                                <span style="color: #008b50">Business</span>
+                            </a>
+                            <div class="con_li con_li_4">
+                                <ul>
+                                    <li id="yiliao">
+                                        <a href="business.html">医疗产业</a>
+                                        <div class="con_li_li">
+                                            <ul>
+                                                <li><a href="business.html">医疗器械</a></li>
+                                                <li><a href="dakeshi.html">大科室建设</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li id="kangti">
+                                        <a href="kangti.html" style="color: #008b50">恒健康体</a>
+                                        <div class="con_li_li">
+                                            <ul>
+                                                <li><a href="healthy-hut.html">健康小屋</a></li>
+                                                <li><a href="huisuo.html">健康会所</a></li>
+                                                <li><a href="chaoshi.html">健康超市</a></li>
+                                                <li><a href="jiankangcheng.html" style="color: #008b50;">健康城</a></li>
+                                                <li><a href="moyucheng.html">法国魔浴休闲城</a></li>
+                                                <li><a href="kangyangcheng.html">康养城</a></li>
+                                                <li><a href="kylvyou.html">康养旅游城</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li id="zhengxing">
+                                        <a href="zhengxing.html">医美微整形</a>
+                                        <div class="con_li_li">
+                                            <ul>
+                                                <li><a href="yidali.html">意大利</a></li>
+                                                <li><a href="hanguo.html">韩国</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="huazhuangpin.html">韩国化妆品</a></li>
+                                    <li id="jiyin">
+                                        <a href="jiyin.html">基因检测<br/>细胞治疗</a>
+                                        <div class="con_li_li">
+                                            <ul>
+                                                <li><a href="jiyin.html">基因检测</a></li>
+                                                <li><a href="xibao.html">细胞治疗</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li id="yanglao">
+                                        <a href="yanglao.html">养老产业</a>
+                                        <div class="con_li_li">
+                                            <ul>
+                                                <li><a href="biguiyuan.html">康养公寓</a></li>
+                                                <li><a href="xiuxian.html">休闲养老</a></li>
+                                                <li><a href="yanglao.html">养老院</a></li>
+                                                <li><a href="dujia.html">度假养老</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="zhaoshang.html">
+                                <h1>招商加盟</h1>
+                                <span>Join</span>
+                            </a>
+                            <div class="con_li con_li_3">
+                                <ul>
+                                    <li><a href="yiliao_join.html">医疗</a></li>
+                                    <li><a href="project.html">恒健康体</a></li>
+                                    <li><a href="moyucheng_join.html">魔浴休闲城</a></li>
+                                    <li><a href="yanglao_join.html">康养/养老产业</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="news.html">
+                                <h1>新闻资讯</h1>
+                                <span>News</span>
+                            </a>
+                            <div class="con_li con_li_5">
+                                <ul>
+                                    <li><a href="news.html">集团新闻</a></li>
+                                    <li><a href="jiankangyd.html">健康园地</a></li>
+                                    <li><a href="zhengce.html">政策支持</a></li>
+                                    <li><a href="qitanews.html">其他新闻</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="contact.html">
+                                <h1>联系我们</h1>
+                                <span>Contact</span>
+                            </a>
+                            <div class="con_li con_li_6">
+                                <ul>
+                                    <li><a href="contact.html">集团总部</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="login.html">
+                                <h1>登陆/注册</h1>
+                                <span>login/register</span>
+                            </a>
+                            <div class="con_li con_li_7">
+                                <ul>
+                                    <li><a href="login.html">登陆</a></li>
+                                    <li><a href="register.html">注册</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="bg-shadow"></div>
+<div class="container">
+    <div class="childBanner">
+        <div class="con-width">
+            <h1>
+                中科恒健
+                <span>ZHONGKE HENGJIAN</span>
+                <a href="javascript:void(0)">
+                    <img src="img/common/ico-forward.png"/>
+                </a>
+            </h1>
+            <ul class="clearfix">
+                <li><a href="kangti.html">恒健康体</a></li>
+                <li><a href="healthy-hut.html">健康小屋</a></li>
+                <li><a href="huisuo.html">健康会所</a></li>
+                <li><a href="chaoshi.html">健康超市</a></li>
+                <li class="active"><a href="jiankangcheng.html">健康城</a></li>
+                <li><a href="moyucheng.html">法国魔浴休闲城</a></li>
+                <li><a href="kangyangcheng.html">康养城</a></li>
+                <li><a href="kylvyou.html">康养旅游城</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="newsDetail">
+        <div class="con-width clearfix">
+            <div class="con f-l">
+                <div class="btnStyle-3">
+                    <span>健康城</span>
+                    <label>Healthy City</label>
+                </div>
+                <div class="txt">
+                    <p style="text-align: center;color: #008b50;font-size: 26px">健康城</p>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <img src="img/business/0068ubcKjw1f1rc4314a0j30qo0zk15t.jpg" width="100%" height="600"/>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        开启健康城时代---药店的经营模式随着药品零售业的变化不断在更新,依次经历了从单体药店到连锁化、平价药房,再到多元化药店的探索。如今,在“大健康”产业被认为前景广阔且潜力巨大的背景下,药店+诊所、药店+互联网、中医馆等新业态盈利模式开始遍地开花,其中就出现了融医、养、防、治等一体的“庞然大物”——健康城。
+                    </p>
+                    <p style="font-size: 18px;">
+                        绿色氧疗内部调理区——从内到外，系统排毒，畅享快意人生
+                    </p>
+                    <p style="font-size: 18px;">
+                        项目介绍
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        恒健独创的绿色氧疗配合盐屋、砭石能量房、纳米汗蒸、气血调理、电气石汗蒸等功能让小分子氢气水、蓝氧水等氧疗水首先被胃肠道吸收然后经过肝脏心脏和肺释放一部分后，进入脑、脊髓、肾、胰腺、肌肉和软骨并快速进入人体细胞，激活全身免疫，抗自由基延缓衰老。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        •氢气水：医学界普遍公认氢气水是一种新型选择性抗氧化和理想的抗炎物质，与体内的过氧自由基 （Hydroxy radical）结合将其排出体外。日本已发表300多篇证实“水素水”安全性和功能性的论文。饮用饱和氢气水（富氢水）是最常采用的方式之一，也是目前的理想手段。通过饮用饱和氢气水可以进行非药物干预治疗糖尿病(2型)、高血脂、高血压等代谢综合征，甚至有望治疗恶性肿瘤。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        •蓝氧水：将蓝氧气体溶解到水中，因为蓝氧具有的消毒杀菌作用，口服后首先杀灭口腔、胃肠道病菌，消除体内炎症。蓝氧的快速分解作用分解为氧气和对人体有益的过氧化氢，氧气通过自然腔道吸收后为血液和人体细胞供氧。
+                    </p>
+                    <p style="font-size: 18px;">
+                        配套项目
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        •天然氧疗——采用高效负离子发生器、蓝氧空气净化器、多层密闭措施实现与周围空气的隔绝，用户吸入含有负离子的纯氧，有效改善机体缺氧，增强免疫细胞活力，提高肺功能，同时增强细胞的有氧代谢，加强皮肤营养，还可有效提升抵抗力，改善亚健康状态。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        •盐屋——在灯光的照射、加热下，天然优质矿盐释放出大量的钠离子、氯离子，有效改善空气质量，从而达到缓解疲劳、松弛神经、深化和减缓呼吸、促进血液循环的作用。各种天然矿物元素渗入肌肤，能够有效降低血压，提高集中力，增加皮肤弹性，延缓皮肤老化。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        •气血调理——调理1个疗程即可有效活化细胞，疏通经络，加速代谢，改善全身气血循环。调理2-3个疗程以后，血氧含量明显增加，大脑缺氧、缺血状况得到显著改善，免疫功能也得到有效提升，活力充沛，更显年轻。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        •芳香气疗——负离子气疗、醒脑提神气疗、芳香精油气疗
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        •砭石能量房——砭石可以发出许多人体有益的远红外射线和超声波脉冲，促进微循环、调理新陈代谢，激活全身的淋巴与血液，净化肝肾等脏器，排除多余的毒素，全面增强人的免疫能力，对于颈椎病,腰椎病,偏头疼,类风湿疗效尤为显著。
+                    </p>
+                    <p style="font-size: 18px;">
+                        氧疗美容区——留驻青春，永葆年轻
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        蓝氧精油面膜、蓝氧水面膜，杀灭面部螨虫，消灭皮肤隐患，搭配韩国媛诗妍系列化妆品，对皮肤做有效保养，消除毛孔、细纹、松弛、暗沉、粗糙、缺水、斑痕，重唤肌肤活力，凝聚青春时光。
+                    </p>
+                    <p style="font-size: 18px;">
+                        媛诗妍精品系列
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        源于韩国，专业护肤，凝聚时光的脚步，让美丽与世界同步。
+                    </p>
+                    <p style="font-size: 18px;">
+                        中医养生区——扬中医文化  圆健康梦想
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        包含项目：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （1）膏方调理：一人一方，辩证调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （2）中医艾灸：温通经脉、调和气血、协调阴阳、扶正祛邪
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （2）中医艾灸：温通经脉、调和气血、协调阴阳、扶正祛邪
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （3）针灸拔罐：内病外治，调节脏腑
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （4）经络推拿：特定手法实现疏通经络、协调肺腑
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （5）中药酒：秘方配制，口服壮阳，外敷祛湿止痛
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （6）中药垫：特制的中药垫让药力穿透表层直达病区
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        主要功效：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        调节阴阳平衡，改善血液循环，促进机体新陈代谢，调整和提高机体的免疫能力，保证身体经络通畅，改善健康状况，提高生活质量。
+                    </p>
+                    <br/>
+                    <img src="img/business/恒健健康城_1.jpg" alt="健康城" width="100%"/>
+                    <p style="font-size: 18px">
+                        自助调理区
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        包含项目：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （1）高压离子电自助调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （2）脊柱梳理自助调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （3）空气波自助调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （4）锗石垫自助调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （5）生物电自助调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （6）精神压力自助调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （7）拍打自助按摩
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （8）骨质疏松自助调理
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        主要功效：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        调节人体血液的酸碱平衡，改善植物神经紊乱，提高人体免疫力，以增加人体对各种疾病的抵抗力，逐渐恢复人体各器官的正常功能。
+                    </p>
+                    <p style="font-size: 18px">
+                        儿童娱乐区
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        拥有充满童趣的儿童水世界及其他各类新奇娱乐器材供儿童玩耍，专人看护，确保安全，家长可以放心把孩子交付于此，利用难得的空闲时间放松自己，专心调理，享受健康与美丽。
+                    </p>
+                    <p style="font-size: 18px;">
+                        健身美体区
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        运动健身
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        健身教练全程指导，根据用户的不同体质制定个性化的健身方案，并对用户的日常营养补充提出专业意见。只要坚持不懈，就能收获一个不一样的你！
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        运动减肥
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        刺激机体机能，促进代谢，消耗掉多余的脂肪，减肥效果倍增。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        有氧运动
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        有氧运动能恢复人体对新陈代谢的调节，增强和改善心肺功能，预防骨质疏松，调节心理和精神状态。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        瑜伽美体
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        瑜伽可以修养身心，让人更显气质，让你从内到外美起来！
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        功法养生
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        滋养精气、固本强身、祛除疾病、延年益寿。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        氧疗4D影院/多媒体教室
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        每天定时播放影片，供客户休闲娱乐。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        设施完备，功能先进，可以召开各种报告会、演讲会、讨论会议、学术交流会等。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        休闲养生餐厅
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        由专业营养师为不同体质的客人提供低脂、低热营养丰富的养生餐，对不同体质的人群都起到身体调理作用。
+                    </p>
+                    <p style="font-size: 18px;">
+                        童学馆
+                    </p>
+                    <p style="font-size: 16px;">
+                        包含项目：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        1、课外辅导
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        聘请拥有多年教学经验的名校讲师对孩子进行专业辅导，根据不同年级、不同学科、不同问题制定个性化辅导方案，面对面授课，帮助孩子拾遗补缺，突破学习难点，有效提升成绩。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        2、才艺培训
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        为孩子提供才艺培养及展示自我的机会，让小朋友拥有一个展现自我的平台。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        3、国学六艺
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        包含经典诵读、礼仪培训等，向广大青少年普及国学知识，弘扬中华民族传统美德，推动国学教育，促进社会和谐。
+                    </p>
+                    <p style="font-size: 18px;">
+                        意大利微整抗衰
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        引入专业的意大利RINNOVA医学美容技术，从美白、嫩肤、瘦脸、除皱、淡斑到抗衰等项目一应俱全，过程快捷，无痛无痕，效果自然，为用户实现永葆青春的美丽梦想，让新时代的女性散发耀眼光芒，重现青春容颜。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        主要功效：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        美白祛斑，嫩肤瘦脸，刺激胶原新生、重塑，达到紧致皮肤、除皱抗衰的效果。
+                    </p>
+                    <p style="font-size: 18px;">
+                        瑞士细胞抗衰区
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        瑞士细胞活化抗衰老，从改善细胞机能层面逆转青春，利用抗衰老活性物质，修复表皮和真皮细胞机能，加快细胞新陈代谢，排出毒素，合成大量的胶原蛋白，恢复皮肤年轻紧致，为用户实现永葆青春的美丽梦想。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        主要功效：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        1、增强人体免疫机能，提高机体的防御能力。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        2、改善精神疲劳、神经衰弱、记忆力下降、失眠、亚健康等状态。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        3、减轻皱纹、减淡色斑、增加皮肤弹性光泽。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        4、调节荷尔蒙分泌，增加血液制造，改善贫血、气虚，改善月经不调。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        5、增强男性性功能。
+                    </p>
+                    <p style="font-size: 18px;">
+                        慢病未病调理区
+                    </p>
+                    <br/>
+                    <img src="img/business/badaxitong.jpg" width="100%"/>
+                    <p style="font-size: 18px;">
+                        女子青春保鲜区
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        引入蓝氧细胞浴、神经脉冲激活、三维洁阴、提臀缩阴、气血调理等技术，由内而外帮助女人进行深度调理，制定正确方案，帮助女人改变内外部问题。
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        包含项目：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        （1）女子抗衰（2）私密护理（3）卵巢保养（4）提臀缩阴
+                        （5）产后调理（6）气血调理（7）问题性皮肤调理（8）古方养颜
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        主要功效：
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        促进人体新陈代谢和细胞活化，调理和改善呼吸、循环、血液、内分泌等，平衡身体机能，唤醒沉寂的卵巢细胞功能，激发女性雌激素正常分泌，将女性身体调理到良好状态。
+                    </p>
+                    <p style="font-size: 18px;">
+                        生态水吧
+                    </p>
+                    <p style="font-size: 16px;text-indent: 32px">
+                        为客户提供养生茶、咖啡、鲜榨果蔬汁等饮品。
+                    </p>
+                    <br/>
+                    <img src="img/business/恒健健康城.jpg" alt="健康城" width="100%"/>
+                </div>
+            </div>
+            <section class="f-r side">
+                <h1>云管家链接</h1>
+                <ul class="piclist">
+                    <li style="text-align: center">
+                        <a href="http://116.1.214.29:9882/" target="_blank">
+                            <img src="img/project/yunguanjia1.png" alt="健康云管家" width="200" height="200" title="健康云管家"/>
+                        </a>
+                        <br/><br/>
+                        <span class="ytext">健康云管家</span>
+                    </li>
+                    <li style="text-align: center">
+                        <a href="http://116.1.214.29:9883/" target="_blank">
+                            <img src="img/project/yunguanjia2.png" alt="健康云管家商城" width="200" height="200" title="健康云管家商城"/>
+                        </a>
+                        <br/><br/>
+                        <span class="ytext">健康云管家商城</span>
+                    </li>
+                </ul>
+                <div class="split"></div>
+                <h1>健康城项目</h1>
+                <div class="magnify" id="magnify" onmouseover="stop()" onmouseout="start()">
+                    <div class="large"></div>
+                    <img class="small" src="img/business/恒健健康城_2.jpg" alt="健康城" width="100%"/>
+                </div>
+                <div class="split"></div>
+                <div>
+                    <canvas id="clock" width="220px" height="220px">
+                        该浏览器不支持Canvas，请更换浏览器重试
+                    </canvas>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="links">
+        <div class="con-width clearfix">
+            <div class="f-l">
+                <a href="index.html">
+                    <img src="img/common/logo1.png" width="114" height="110"/>
+                </a>
+            </div>
+            <div class="f-c">
+                <ul class="clearfix">
+                    <li><a href="about-us.html">集团概况</a></li>
+                    <li><a href="business.html">旗下产业</a></li>
+                    <li><a href="zhaoshang.html">招商加盟</a></li>
+                    <li><a href="news.html">新闻资讯</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                    <li><a href="legal-statement.html">法律声明</a></li>
+                </ul>
+                <div style="text-align: center">
+                    <p>版权所有：中科恒健集团</p>
+                    <p>
+                        电话：400-683-8881 企业邮箱：zonk888@163.com &nbsp;&nbsp;<br/>
+                        鲁ICP备11008778号
+                        <a href="http://www.cnzz.com/stat/website.php?web_id=5428666" target="_blank" title="站长统计"><img style="margin-left: 3px;margin-top: 5px" border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/img/pic.gif"></a>
+                        <a href="http://tongji.baidu.com/hm-web/welcome/ico?s=9dd65c158147d11079d788c32d309659" target="_blank"><img style="margin-top: 5px" border="0" src="http://eiv.baidu.com/hmt/icon/21.gif" width="20" height="20"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="f-r">
+                <img src="img/common/code.jpg" width="110" height="110"/>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--右侧悬浮栏-->
+<div class="fixed">
+    <div><a href="http://t.ibangkf.com/i/chat-zkhj.html?l=zkhj&page=http%3A%2F%2Fwww.zkhj.net%2F&auth_key=1489475798-0-0-b9b6a2ee97f1db8c8f47c9ce6ddfe2a9" target="_blank" id="liuyan"></a></div>
+    <div>
+        <a href="javascript:void(0)" id="weixin">
+            <p class="weixin">
+                <img src="img/common/code_1.jpg" width="120" height="120"/>
+            </p>
+        </a>
+    </div>
+    <div class="qq">
+        <a href="javascript:void(0)" id="qq"></a>
+        <ul class="qq_con">
+            <li><a href="tencent://message/?uin=3214205715&Site=400301.com&Menu=yes">售前</a></li>
+            <li><a href="tencent://message/?uin=3214205715&Site=400301.com&Menu=yes">售后</a></li>
+        </ul>
+    </div>
+    <div><a id="btn_top"></a></div>
+</div>
+<!--左侧悬浮栏-->
+<div class="message">
+    <p>在线客服咨询系统</p>
+    <div style="margin-top: 10px">
+        <form action="#">
+            <label>姓名：</label><input type="text"/><span>*</span><br/>
+            <label>电话：</label><input type="text"/><span>*</span><br/>
+            <label>邮箱：</label><input type="text"/><br/>
+            <label>Q Q：</label><input type="text"/><br/>
+            <label>留言：</label><div contenteditable="true" class="content"></div>
+            <input type="submit" value="提交" class="submit"/>
+        </form>
+    </div>
+    <div class="message_btn"><span>在线咨询</span></div>
+</div>
+</body>
+<script src="js/common.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/prefixfree.min.js"></script>
+<script src="js/jquery.imagezoom.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Uses default setting.
+        $(".magnify").imageZoom();
+    });
+    /*放大镜部分 鼠标移入禁止滚动事件*/
+    function stop(){
+        document.documentElement.style.overflow = "hidden";
+    }
+    function start(){
+        document.documentElement.style.overflow = "auto";
+    }
+</script>
+</html>
